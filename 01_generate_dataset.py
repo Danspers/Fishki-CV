@@ -224,25 +224,32 @@ def main():
             cv2.imwrite(fname_out_vis, img_vis)
 
     # uncomment to see visualization
-        cv2.imshow('window', img_vis)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-        sys.exit(1)
+    #    cv2.imshow('window', img_vis)
+    #    cv2.waitKey(0)
+    #    cv2.destroyAllWindows()
+    #    sys.exit(1)
 
     # make lists
     PNG_LIST = []
     for fname in sorted(glob.glob(PATH_TO_SEGS+'/*.png')):
         PNG_LIST.append(get_filename_without_extension(fname))
 
+    # валидация данных
     print('Total Train+Test samples {} '.format(len(PNG_LIST)))
-    ids_train_split, ids_test_split = train_test_split(PNG_LIST, test_size=0.05, random_state=42)
+    ids_train_split, other_split    = train_test_split(PNG_LIST, train_size=0.80, random_state=42)
+    ids_valid_split, ids_test_split = train_test_split(other_split, test_size=0.50, random_state=42)
     print('Train on {} samples'.format(len(ids_train_split)))
-    print('Val   on {} samples'.format(len(ids_test_split)))
-    print('Test (same as Val)  on {} samples'.format(len(ids_test_split)))
+    print('Valid on {} samples'.format(len(ids_valid_split)))
+    print('Test  on {} samples'.format(len(ids_test_split)))
 
     # make train list
     with open(os.path.join(PATH_TO_ISET,'train.txt'), 'w', encoding='utf-8') as f:
         for fname in ids_train_split:
+            f.write('{}'.format(fname) + '\n')
+
+    # make valid list
+    with open(os.path.join(PATH_TO_ISET,'val.txt'), 'w', encoding='utf-8') as f:
+        for fname in ids_valid_split:
             f.write('{}'.format(fname) + '\n')
 
     # make test list
@@ -250,11 +257,5 @@ def main():
         for fname in ids_test_split:
             f.write('{}'.format(fname) + '\n')
 
-    # validation same as test
-    with open(os.path.join(PATH_TO_ISET,'val.txt'), 'w', encoding='utf-8') as f:
-        for fname in ids_test_split:
-            f.write('{}'.format(fname) + '\n')
-
 if __name__ == '__main__':
     main()
-    
