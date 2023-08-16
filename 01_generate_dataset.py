@@ -6,20 +6,20 @@ from pathlib import Path
 from PIL import ImageFont, ImageDraw, Image
 from sklearn.model_selection import train_test_split
 
-OBJ_NAMES_FILE = 'fishki_labelme/obj.names'
-PATH_FROM = 'fishki_labelme'
-DATA_FOLDER = 'fishki_voc_dataset'
+OBJ_NAMES_FILE = 'fishki_labelme/obj.names' # файл с именами классов
+PATH_FROM = 'fishki_labelme'     # папка с исходными данными
+PATH_TO   = 'fishki_voc_dataset' # общая папка для сгенерированных датасетов (train/val/test) 
 
-PATH_TO      = os.path.join(DATA_FOLDER,'fishki_voc_data')
+# пути для подразделов / папки индивидуальные для каждого типа данных
 PATH_TO_SEGS = os.path.join(PATH_TO,'SegmentationClass')
 PATH_TO_ISET = os.path.join(PATH_TO,'ImageSets','Segmentation')
 PATH_TO_IMGS = os.path.join(PATH_TO,'JPEGImages')
 PATH_TO_JSON = os.path.join(PATH_TO,'JSONs')
-VIS_DIR = os.path.join(PATH_TO,'Visualization')
-VISUALIZE = True
+VIS_DIR      = os.path.join(PATH_TO,'Visualization')
+VISUALIZE    = True
 VIS_FONT_SIZE = 48
 
-# make colormap
+# функция создания цветной карты
 def label_colormap(n_label=256):
     def bitget(byteval, idx):
         shape = byteval.shape + (8,)
@@ -38,12 +38,12 @@ def label_colormap(n_label=256):
     b = np.bitwise_or.reduce(np.left_shift(bitget(i, 2), j), axis=1)
 
     cmap = np.stack((r, g, b), axis=1).astype(np.uint8)
-#    cmap = cmap.tolist()
     return cmap
 
+# создания цветной карты
 colormap = label_colormap()
 
-# draw a small text box on _img_ with _text_ at position x, y
+# нанесение небольшой надписи на _img_ вместе с _text_ на позиции x, y
 def draw_text_box(img, text, x, y, fontColor = (255,255,255), backColor = (0,0,0), fontScale = 0.5, lineType = 1):
     font                   = cv2.FONT_HERSHEY_SIMPLEX
     # get the width and height of the text box
@@ -55,6 +55,7 @@ def draw_text_box(img, text, x, y, fontColor = (255,255,255), backColor = (0,0,0
     cv2.putText(img,'{}'.format(text), (int(x),int(y)), font, fontScale=fontScale, color=fontColor, thickness=lineType)
     return img
 
+# нанесение "легенды" (название классов объектов на изображении)
 def draw_legend(frame, x1,y1, label_list, colormap):
     for i,label in enumerate(label_list):
         fg_color = [255,255,255]
@@ -105,7 +106,6 @@ def replace_regex_in_file_imagepath(filename):
                 image_path  = result.group(0)
                 print('# before {}'.format(image_path))
                 image_path2 = os.path.basename(image_path)
-#                image_path2 = image_path2.replace('.bmp','.jpg')
                 print('# after  {}'.format(image_path2))
                 new_line= line.replace(image_path,image_path2)
             else:
@@ -224,10 +224,10 @@ def main():
             cv2.imwrite(fname_out_vis, img_vis)
 
     # uncomment to see visualization
-    #    cv2.imshow('window', img_vis)
-    #    cv2.waitKey(0)
-    #    cv2.destroyAllWindows()
-    #    sys.exit(1)
+        cv2.imshow('window', img_vis)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        sys.exit(1)
 
     # make lists
     PNG_LIST = []
