@@ -1,7 +1,4 @@
 fishki_labelme/
-fishki_voc_dataset/
-SemanticSegmentationLesson/
 Fishki_CV(test).ipynb
 test.py
-*.docx
 *.pdf
