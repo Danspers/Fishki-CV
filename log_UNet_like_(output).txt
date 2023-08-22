@@ -1,0 +1,50 @@
+Epoch 1/25
+80/80 [==============================] - 233s 3s/step - loss: 0.3654 - dice_mc_metric: 0.5579 - val_loss: 4.6165 - val_dice_mc_metric: 0.2896
+Epoch 2/25
+80/80 [==============================] - 236s 3s/step - loss: 0.1704 - dice_mc_metric: 0.6779 - val_loss: 2.6883 - val_dice_mc_metric: 0.3037
+Epoch 3/25
+80/80 [==============================] - 240s 3s/step - loss: 0.1211 - dice_mc_metric: 0.7308 - val_loss: 0.9041 - val_dice_mc_metric: 0.3928
+Epoch 4/25
+80/80 [==============================] - 235s 3s/step - loss: 0.0850 - dice_mc_metric: 0.7631 - val_loss: 1.2813 - val_dice_mc_metric: 0.4010
+Epoch 5/25
+80/80 [==============================] - 235s 3s/step - loss: 0.0664 - dice_mc_metric: 0.7893 - val_loss: 0.6146 - val_dice_mc_metric: 0.4956
+Epoch 6/25
+80/80 [==============================] - 230s 3s/step - loss: 0.0514 - dice_mc_metric: 0.8119 - val_loss: 0.1337 - val_dice_mc_metric: 0.6010
+Epoch 7/25
+80/80 [==============================] - 226s 3s/step - loss: 0.0484 - dice_mc_metric: 0.8269 - val_loss: 2.3067 - val_dice_mc_metric: 0.3378
+Epoch 8/25
+80/80 [==============================] - 235s 3s/step - loss: 0.0437 - dice_mc_metric: 0.8342 - val_loss: 1.6401 - val_dice_mc_metric: 0.3440
+Epoch 9/25
+80/80 [==============================] - 236s 3s/step - loss: 0.0355 - dice_mc_metric: 0.8520 - val_loss: 0.4776 - val_dice_mc_metric: 0.5564
+Epoch 10/25
+80/80 [==============================] - 229s 3s/step - loss: 0.0301 - dice_mc_metric: 0.8681 - val_loss: 0.1402 - val_dice_mc_metric: 0.6495
+Epoch 11/25
+80/80 [==============================] - 243s 3s/step - loss: 0.0298 - dice_mc_metric: 0.8741 - val_loss: 0.3210 - val_dice_mc_metric: 0.6077
+Epoch 12/25
+80/80 [==============================] - 223s 3s/step - loss: 0.0344 - dice_mc_metric: 0.8704 - val_loss: 9.5259 - val_dice_mc_metric: 0.2902
+Epoch 13/25
+80/80 [==============================] - 216s 3s/step - loss: 0.0364 - dice_mc_metric: 0.8611 - val_loss: 0.1944 - val_dice_mc_metric: 0.6435
+Epoch 14/25
+80/80 [==============================] - 217s 3s/step - loss: 0.0267 - dice_mc_metric: 0.8859 - val_loss: 1.0961 - val_dice_mc_metric: 0.5338
+Epoch 15/25
+80/80 [==============================] - 236s 3s/step - loss: 0.0235 - dice_mc_metric: 0.8930 - val_loss: 0.1313 - val_dice_mc_metric: 0.6394
+Epoch 16/25
+80/80 [==============================] - 249s 3s/step - loss: 0.0228 - dice_mc_metric: 0.8993 - val_loss: 0.6900 - val_dice_mc_metric: 0.5609
+Epoch 17/25
+80/80 [==============================] - 244s 3s/step - loss: 0.0228 - dice_mc_metric: 0.9020 - val_loss: 0.0787 - val_dice_mc_metric: 0.6759
+Epoch 18/25
+80/80 [==============================] - 231s 3s/step - loss: 0.0215 - dice_mc_metric: 0.9052 - val_loss: 0.1299 - val_dice_mc_metric: 0.6131
+Epoch 19/25
+80/80 [==============================] - 240s 3s/step - loss: 0.0203 - dice_mc_metric: 0.9085 - val_loss: 1.1398 - val_dice_mc_metric: 0.4901
+Epoch 20/25
+80/80 [==============================] - 226s 3s/step - loss: 0.0210 - dice_mc_metric: 0.9100 - val_loss: 0.0856 - val_dice_mc_metric: 0.7131
+Epoch 21/25
+80/80 [==============================] - 225s 3s/step - loss: 0.0216 - dice_mc_metric: 0.9089 - val_loss: 0.1739 - val_dice_mc_metric: 0.6316
+Epoch 22/25
+80/80 [==============================] - 230s 3s/step - loss: 0.0204 - dice_mc_metric: 0.9078 - val_loss: 0.4520 - val_dice_mc_metric: 0.5985
+Epoch 23/25
+80/80 [==============================] - 224s 3s/step - loss: 0.0197 - dice_mc_metric: 0.9147 - val_loss: 0.5654 - val_dice_mc_metric: 0.5748
+Epoch 24/25
+80/80 [==============================] - 224s 3s/step - loss: 0.0190 - dice_mc_metric: 0.9172 - val_loss: 0.0902 - val_dice_mc_metric: 0.7133
+Epoch 25/25
+80/80 [==============================] - 237s 3s/step - loss: 0.0189 - dice_mc_metric: 0.9176 - val_loss: 0.3388 - val_dice_mc_metric: 0.6228
